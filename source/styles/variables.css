@@ -1,0 +1,49 @@
+$color-lightGray: #f0f0f0;
+$color-lightGray2: #e2e2e2;
+$color-lightGray3: #ededed;
+$color-lightGray4: #b6b6b6;
+$color-middleGray: #cccccc;
+$color-gray: #727272;
+$color-white: #ffffff;
+$color-white-30: rgba(255, 255, 255, 0.3);
+$color-white-80: rgba(255, 255, 255, 0.8);
+$color-lightestShadow: rgba(50, 50, 50, 0.1);
+$color-blackShadow: rgba(0,0,0,.2);
+$color-black: #212121;
+$color-black-20: rgba(33, 33, 33, 0.2);
+$color-lightBlue: #e9f1ff;
+$color-lightBlue2: #657083;
+$color-lightBlue3: #a5b7d4;
+$color-whiteBlue: #e8f0ff;
+$color-darkBlue: #2c75ff;
+$color-darkBlue-20: rgba(44, 117, 255, 0.2);
+$color-darkBlue-30: rgba(44, 117, 255, 0.3);
+$color-darkBlue2: #22303e;
+$color-darkBlue3: #232a39;
+$color-orange: #fd7921;
+$color-orange-20: rgba(253, 121, 33, 0.2);
+$color-orange-90: rgba(253, 121, 33, 0.9);
+$color-blue-10: rgba(27, 89, 206, 0.1);
+$color-lightPink: #fef7f4;
+
+$animationDuration: 700ms;
+$sliderAnimation: 1s;
+$sliderAnimationDelay: 500ms;
+$sliderAnimationDelayItem: 100ms;
+$animationBounceShift: 200px;
+$transitionDuration: .2s;
+
+$weight-thin: 100;
+$weight-light: 300;
+$weight-semibold: 600;
+$weight-bold: 700;
+$weight-black: 900;
+
+$fontNeris: 'Neris', sans-serif;
+
+$mobileWidth: 450px;
+$tabWidth: 768px;
+$tabWidth2: 880px;
+$netbookWidth: 1040px;
+$netbookWidth2: 1060px;
+$desktopWidth: 1260px;

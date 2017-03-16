@@ -1,0 +1,141 @@
+*
+{
+	box-sizing: border-box;
+	outline: none;
+}
+html 
+{
+	min-height: 100%;
+	position: relative;
+}
+hr 
+{
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #cccccc;
+	margin: 1em 0;
+	padding: 0;
+}
+audio,
+canvas,
+iframe,
+img,
+svg,
+video 
+{
+	vertical-align: middle;
+}
+fieldset 
+{
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+textarea 
+{
+	resize: none;
+}
+ul
+{
+	margin: 0;
+	padding: 0;
+    list-style: none;
+}
+a
+{
+	text-decoration: none;
+	color: inherit;
+}
+button
+{
+	outline: 0;
+	border: 0;
+	background: none;
+	cursor: pointer;
+}
+.hidden 
+{
+	display: none !important;
+}
+.clearfix:before,
+.clearfix:after 
+{
+	content: " ";
+	display: table;
+}
+.clearfix:after 
+{
+	clear: both;
+}
+.pullLeft
+{
+	float: left;
+}
+.pullRight
+{
+	float: right;
+}
+@media print 
+{
+	*,
+	*:before,
+	*:after,
+	*:first-letter,
+	*:first-line 
+	{
+		background: transparent !important;
+		color: #000 !important;
+		box-shadow: none !important;
+		text-shadow: none !important;
+	}
+	a,
+	a:visited 
+	{
+		text-decoration: underline;
+	}
+	a[href]:after 
+	{
+		content: " (" attr(href) ")";
+	}
+	abbr[title]:after 
+	{
+		content: " (" attr(title) ")";
+	}
+	a[href^="#"]:after,
+	a[href^="javascript:"]:after 
+	{
+		content: "";
+	}
+	pre,
+	blockquote 
+	{
+		border: 1px solid #999;
+		page-break-inside: avoid;
+	}
+	thead 
+	{
+		display: table-header-group;
+	}
+	tr,
+	img 
+	{
+		page-break-inside: avoid;
+	}
+	img 
+	{
+		max-width: 100% !important;
+	}
+	p,
+	h2,
+	h3 
+	{
+		orphans: 3;
+		widows: 3;
+	}
+	h2,
+	h3 
+	{
+		page-break-after: avoid;
+	}
+}

@@ -1,0 +1,72 @@
+@font-face 
+{
+	font-family: 'Neris';
+	font-weight: $weight-thin;
+	font-style: normal;
+	src: url('/fonts/neris-thin.woff2') format('woff2'),
+	url('/fonts/neris-thin.woff') format('woff');
+}
+@font-face 
+{
+	font-family: 'Neris';
+	font-weight: $weight-thin;
+	font-style: italic;
+	src: url('/fonts/neris-thinitalic.woff2') format('woff2'),
+	url('/fonts/neris-thinitalic.woff') format('woff');
+}
+@font-face 
+{
+	font-family: 'Neris';
+	font-weight: $weight-light;
+	font-style: normal;
+	src: url('/fonts/neris-light.woff2') format('woff2'),
+	url('/fonts/neris-light.woff') format('woff');
+}
+@font-face 
+{
+	font-family: 'Neris';
+	font-weight: $weight-light;
+	font-style: italic;
+	src: url('/fonts/neris-lightitalic.woff2') format('woff2'),
+	url('/fonts/neris-lightitalic.woff') format('woff');
+}
+@font-face 
+{
+	font-family: 'Neris';
+	font-weight: $weight-semibold;
+	font-style: normal;
+	src: url('/fonts/neris-semibold.woff2') format('woff2'),
+	url('/fonts/neris-semibold.woff') format('woff');
+}
+@font-face 
+{
+	font-family: 'Neris';
+	font-weight: $weight-semibold;
+	font-style: italic;
+	src: url('/fonts/neris-semibolditalic.woff2') format('woff2'),
+	url('/fonts/neris-semibolditalic.woff') format('woff');
+}
+@font-face 
+{
+	font-family: 'Neris';
+	font-weight: $weight-bold;
+	font-style: italic;
+	src: url('/fonts/neris-bolditalic.woff2') format('woff2'),
+	url('/fonts/neris-bolditalic.woff') format('woff');
+}
+@font-face 
+{
+	font-family: 'Neris';
+	font-weight: $weight-black;
+	font-style: normal;
+	src: url('/fonts/neris-black.woff2') format('woff2'),
+	url('/fonts/neris-black.woff') format('woff');
+}
+@font-face 
+{
+	font-family: 'Neris';
+	font-weight: $weight-black;
+	font-style: italic;
+	src: url('/fonts/neris-blackitalic.woff2') format('woff2'),
+	url('/fonts/neris-blackitalic.woff') format('woff');
+}

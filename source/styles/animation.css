@@ -1,0 +1,67 @@
+.animation-bounceUp
+{
+	opacity: 0;
+	transition: all $animationDuration ease-out;
+	transform: translate3d(0, $animationBounceShift, 0);
+	backface-visibility: hidden;
+	
+	@media only screen and (max-width: $netbookWidth) 
+	{
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+	
+	&.inView
+	{
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+.animation-fadeInLeft
+{
+	animation-duration: $sliderAnimation;
+	animation-name: fadeInLeft;
+	animation-fill-mode: both;
+	
+	@media only screen and (max-width: $tabWidth) 
+	{
+		animation-duration: 0;
+	}
+}
+.animation-fadeOutRightBig
+{
+	animation-duration: $sliderAnimation;
+	animation-name: fadeOutRightBig;
+	animation-fill-mode: both;
+	
+	@media only screen and (max-width: $tabWidth) 
+	{
+		animation-duration: 0;
+	}
+}
+@keyframes fadeInLeft 
+{
+	from 
+	{
+		opacity: 0;
+		transform: translate3d(-100%, 0, 0);
+	}
+	to 
+	{
+		opacity: 1;
+		transform: none;
+	}
+}
+@keyframes fadeOutRightBig 
+{
+	from 
+	{
+		opacity: 1;
+	}
+	to 
+	{
+		opacity: 0;
+		transform: translate3d(2000px, 0, 0);
+	}
+}

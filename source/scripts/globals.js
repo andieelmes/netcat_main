@@ -1,0 +1,1 @@
+var animationDuration = 300;

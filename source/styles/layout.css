@@ -1,0 +1,1265 @@
+@import "variables.css";
+@import "fonts.css";
+@import "normalize.css";
+@import "default.css";
+@import "animation.css";
+@import "lib/swiper.min.css";
+
+body
+{
+	background: $color-lightGray;
+}
+.mainContainer
+{
+	width: 100%;
+	max-width: 1240px;
+	margin: 10px auto;
+	background: $color-white;
+	/* box-shadow: 0 1px 5px 0 $color-lightestShadow; */
+}
+.header
+{
+	width: 100%;
+	height: 60px;
+	background: $color-white;
+	padding: 10px 0;
+	color: $color-gray;
+	font: $weight-light 16px/16px $fontNeris;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-wrap: wrap;
+	position: relative;
+}
+.logo
+{
+	width: 60px;
+	height: 40px;
+	border-right: 1px $color-lightGray2 solid;
+	display: block;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.search
+{
+	position: relative;
+	display: flex;
+	justify-content: center;	
+	align-items: center;
+	flex-wrap: wrap;
+	float: left;
+	
+	&__field
+	{
+		width: 40px;
+		height: 40px;
+		border-radius: 40px;
+		border: 1px $color-lightGray2 solid;
+		transition: width $transitionDuration ease;
+		
+		&_open
+		{
+			width: 250px;
+			padding: 0 40px 0 20px;
+		}
+	}
+	&__button
+	{
+		position: absolute;
+		z-index: 1;
+		
+		&_open
+		{
+			right: 10px;
+		}
+	}
+}
+.login
+{
+	float: left;
+	border-radius: 40px;
+	border: 1px $color-lightGray2 solid;	
+	width: 100px;
+	height: 40px;
+	color: $color-gray;
+	margin-left: 10px;
+}
+.topmenu
+{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-wrap: wrap;
+	position: relative;
+	z-index: 1;	
+	
+	@media only screen and (max-width: $netbookWidth) 
+	{
+		display: none;
+		position: absolute;
+		top: 60px;
+		right: 0;
+		background: $color-white;
+		box-shadow: 0 1px 5px 0 $color-lightestShadow;
+	}
+	
+	&__item
+	{
+		margin: 0 20px;
+		padding: 22px 0;	
+
+		@media only screen and (max-width: $netbookWidth)
+		{
+			display: block;
+			padding: 15px 0;
+		}
+	}
+	&__hasSubmenu
+	{
+		@media only screen and (max-width: $netbookWidth)
+		{
+			padding-bottom: 0;
+		}
+		
+		&:hover
+		{
+			.submenu
+			{
+				opacity: 1;
+				left: 0;
+			}
+		}
+	}
+}
+.topMenuIcon
+{
+	display: none;
+	margin: 7px 5px 0 10px;
+	
+	path
+	{
+		fill: $color-orange;
+	}
+	
+	@media only screen and (max-width: $netbookWidth) 
+	{
+		display: inline-block;
+	}
+}
+.rightBlock
+{
+	position: absolute;
+	right: 10px;
+}
+.submenu
+{
+	position: absolute;
+	opacity: 0;	
+	left: -1024px;
+	width: 300px;
+	padding: 20px 10px;
+	background: $color-white;
+	box-shadow: 0 1px 5px 0 $color-lightestShadow;
+	font: $weight-semibold 16px/16px $fontNeris;
+	margin-top: 22px;
+	transition: opacity $transitionDuration ease;
+	
+	@media only screen and (max-width: $netbookWidth)
+	{
+		position: static;
+		opacity: 1;
+		width: auto;
+		padding: 0;
+		box-shadow: none;
+		margin-top: 15px;
+	}
+	
+	&__item
+	{
+		height: 40px;
+		padding: 0 10px;
+		color: $color-black;
+		border-radius: 2px;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		flex-wrap: wrap;
+		
+		@media only screen and (max-width: $netbookWidth)
+		{
+			padding: 0;
+		}
+		
+		.imageContainer
+		{
+			width: 30px;
+		}
+		
+		img
+		{
+			opacity: 0.5;
+			
+			@media only screen and (max-width: $netbookWidth)
+			{
+				opacity: 1;
+			}
+		}
+		
+		&:hover
+		{
+			background: $color-lightBlue;
+			color: $color-darkBlue;
+			
+			@media only screen and (max-width: $netbookWidth)
+			{
+				background: none;
+				color: $color-black;
+			}
+			
+			img
+			{
+				opacity: 1;
+			}
+		}
+	}
+}
+
+.topBlock
+{
+	width: 100%;
+	max-width: 1240px;
+	height: 550px;
+	background: url('/images/top.jpg') no-repeat;
+	text-align: center;
+	color: $color-white;
+	font: $weight-semibold 14px/14px $fontNeris;
+	
+	&__firstText
+	{
+		padding-top: 80px;
+		text-transform: uppercase;
+		letter-spacing: 0.14em;
+		opacity: 0.8;
+	}
+	&__mainText
+	{
+		padding-top: 40px;
+		max-width: 700px;
+		font-weight: $weight-black;
+		font-size: 42px;
+		line-height: 54px;
+		margin: 0 auto;
+		
+		@media only screen and (max-width: $tabWidth) 
+		{
+			font-size: 36px;
+			line-height: 42px;
+		}
+		@media only screen and (max-width: $mobileWidth) 
+		{
+			font-size: 24px;
+			line-height: 36px;
+		}
+	}
+	&__buy,
+	&__try
+	{
+		width: 250px;
+		height: 50px;
+		background: $color-orange-90;
+		color: $color-white;
+		font-size: 18px;
+		box-shadow: 0 5px 15px 0 $color-blackShadow;
+		border-radius: 50px;
+		margin: 70px 10px 0 10px;
+		transition: all .2s ease;
+		
+		@media only screen and (max-width: $tabWidth) 
+		{
+			margin-top: 20px;
+		}	
+		
+		span
+		{
+			position: relative;
+			top: -3px;
+		}
+	}
+	&__try
+	{
+		background: none;
+		box-shadow: none;		
+		border: 2px $color-white-30 solid;
+		
+		&:hover
+		{
+			border-color: $color-white;
+		}
+		&:active
+		{
+			opacity: 0.5;
+			border-color: $color-white;
+		}
+	}
+	&__buy
+	{
+		&:hover
+		{
+			background: $color-orange;
+		}
+		&:active
+		{	
+			background: $color-orange;
+			opacity: 0.5;
+		}
+	}
+}
+
+.statistics
+{
+	width: 100%;
+	max-width: 1060px;
+	min-height: 300px;
+	background: $color-white;
+	margin: 40px auto;
+	box-shadow: 0 30px 45px 0 $color-blue-10;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+	
+	@media only screen and (max-width: $tabWidth) 
+	{
+		margin: 0;
+		flex-direction: column;
+	}
+	
+	&__item
+	{
+		text-align: center;
+		font: $weight-light 22px/22px $fontNeris;
+		color: $color-black;
+		width: 230px;
+		min-height: 150px;
+		margin: 0 auto;
+		
+		@media only screen and (max-width: $tabWidth) 
+		{
+			margin: 30px auto;
+		}
+		
+		b
+		{
+			font-weight: $weight-semibold;
+			font-size: 52px;
+			line-height: 46px;
+			display: block;
+			color: $color-darkBlue2;
+		}
+		.description
+		{			
+			font-size: 16px;
+			line-height: 20px;
+			color: $color-gray;			
+			margin-top: 25px;
+		}
+		a
+		{
+			color: $color-orange;
+			border-bottom: 1px $color-orange-20 solid;
+		}
+	}
+	&__vr
+	{
+		width: 1px;
+		height: 200px;
+		background: $color-lightPink;
+		
+		@media only screen and (max-width: $tabWidth) 
+		{
+			display: none;
+		}
+	}	
+}
+
+.redactions
+{
+	margin: 60px 0;
+}
+.redactionsLink
+{
+	margin: 0 90px;
+    height: 40px;
+	white-space: nowrap;
+	
+	@media only screen and (max-width: $tabWidth) 
+	{
+		margin: 0 40px;
+		height: auto;
+	}
+	
+	.swiper-slide
+	{
+		display: inline-block;
+		width: auto;
+		padding: 0 40px 15px;
+		border-bottom: 1px $color-lightGray solid;
+			
+		&:first-child
+		{
+			padding-left: 0;
+		}
+		&:last-child
+		{
+			padding-right: 0;
+		}
+		&-active
+		{
+			color: $color-black;
+			border-color: $color-darkBlue;
+			border-width: 2px;
+			
+			a
+			{
+				color: $color-black;
+			}
+		}
+	}
+	.linkBlock
+	{
+		border-bottom: 1px $color-lightGray solid;
+	}
+	
+	&__item
+	{
+		font: $weight-semibold 14px/14px $fontNeris;
+		color: $color-middleGray;
+		text-transform: uppercase;
+		letter-spacing: 0.15em;
+		transition: color $transitionDuration ease;
+		padding: 0 40px 15px;
+		
+		/* @media only screen and (max-width: $desktopWidth) 
+		{
+			padding: 0 20px 15px;
+		}
+		@media only screen and (max-width: $netbookWidth2) 
+		{
+			font-size: 12px;
+			padding: 0 10px 15px;
+		}
+		@media only screen and (max-width: $tabWidth2) 
+		{
+			font-size: 10px;
+			padding: 0 5px 15px;
+		}
+		@media only screen and (max-width: $tabWidth) 
+		{
+			display: block;
+			padding: 15px 0;
+			font-size: 14px;
+		}
+		@media only screen and (max-width: $mobileWidth) 
+		{
+			font-size: 10px;
+		} */
+	
+		
+		&:first-child
+		{
+			padding-left: 0;
+		}
+		&:last-child
+		{
+			padding-right: 0;
+		}
+		
+		img
+		{
+			vertical-align: top;
+		}
+		
+		&:hover,
+		/* &_active
+		{
+			color: $color-black;
+			border-color: $color-darkBlue;
+			border-width: 2px;
+		} */
+	}
+}
+.redactionsSlidesContainer
+{
+	width: 100%;
+	overflow: hidden;
+	
+	/* &__overflow
+	{
+		position: relative;
+		display: flex;
+		justify-content: flex-start;
+		flex-wrap: wrap;
+		width: 100000px;
+		margin-left: 0;
+	} */
+}
+.redactionsSlide
+{
+	width: 100%;
+	max-width: 1240px;
+	min-height: 450px;
+	margin-top: 60px;
+	font: $weight-light 16px/20px $fontNeris;
+	color: $color-black;
+	position: relative;
+	
+	a
+	{
+		color: $color-darkBlue;
+		border-bottom: 1px $color-darkBlue-20 solid;
+	}	
+	&__image
+	{
+		position: relative;
+		float: right;
+		animation-delay: $sliderAnimationDelay;
+		
+		@media only screen and (max-width: $tabWidth) 
+		{
+			display: none;
+		}
+	}
+	&__header
+	{
+		font-weight: $weight-black;
+		font-size: 42px;
+		line-height: 54px;
+		margin-left: 90px;
+		max-width: 640px;
+		
+		@media only screen and (max-width: $tabWidth) 
+		{
+			margin: 0;
+			padding: 0 40px;
+			font-size: 36px;
+			line-height: 42px;
+		}
+		
+		img
+		{
+			margin: 0 10px;
+		}
+	}
+	&__advantages
+	{
+		position: absolute;
+		left: 90px;
+		top: 280px;
+		max-width: 520px;
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		
+		@media only screen and (max-width: $tabWidth) 
+		{
+			flex-direction: column;
+			align-items: flex-start;
+			position: static;
+			width: 100%;
+			padding-left: 40px;
+		}
+		
+		img
+		{
+			display: block;
+			margin-bottom: 15px;
+		}
+		
+		li
+		{
+			width: 150px;
+			margin-right: 20px;
+			
+			@media only screen and (max-width: $tabWidth) 
+			{
+				margin: 20px auto;
+				text-align: center;
+
+				img
+				{
+					margin: 0 auto 15px auto;
+				}				
+			} 
+			
+			/* @media only screen and (max-width: $tabWidth) 
+			{
+				width: 100%;
+				padding: 0 20px;
+				margin: 20px 0;				
+				
+				img
+				{
+					display: inline-block;
+				}
+			} */
+			
+			&:nth-child(1)
+			{
+				animation-delay: $sliderAnimation;
+			}
+			&:nth-child(2)
+			{
+				animation-delay: calc($sliderAnimation + $sliderAnimationDelayItem);
+			}
+			&:nth-child(3)
+			{
+				animation-delay: calc($sliderAnimation + $sliderAnimationDelayItem + $sliderAnimationDelayItem);
+			}
+		}
+	}
+}
+
+.integration
+{
+	background: $color-lightBlue;
+	padding: 70px 0;
+	
+	&__header
+	{
+		text-align: center;
+		font: $weight-semibold 14px/14px $fontNeris;
+		color: $color-lightBlue2;
+		letter-spacing: 0.15em;
+		text-transform: uppercase;
+	}
+	&__companies
+	{
+		margin-top: 60px;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		flex-wrap: wrap;		
+		
+		@media only screen and (max-width: $tabWidth) 
+		{
+			flex-direction: column;
+			margin-top: 20px;
+			
+			a
+			{
+				margin: 15px 0;
+			}
+		}
+	}
+}
+
+.landings
+{
+	min-height: 450px;
+	background: $color-darkBlue;
+	font: $weight-light 20px/32px $fontNeris;
+	color: $color-whiteBlue;
+	
+	&__header
+	{
+		color: $color-white;
+		font-size: 42px;
+		font-weight: $weight-black;
+		padding: 90px 0 0 90px;
+		
+		@media only screen and (max-width: $netbookWidth) 
+		{
+			padding: 20px 0 0 40px;
+		}
+	}
+	&__text
+	{
+		max-width: 600px;
+		padding: 35px 0 0 90px;
+		
+		@media only screen and (max-width: $netbookWidth) 
+		{
+			padding: 35px 0 35px 40px;
+		}
+	}
+	
+	img
+	{
+		float: right;
+		@media only screen and (max-width: $tabWidth) 
+		{
+			float: none;
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+
+.reviews
+{
+	overflow: hidden;
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	padding-bottom: 100px;
+	
+	@media only screen and (max-width: $tabWidth) 
+	{
+		flex-direction: column;
+		align-items: center;
+		padding-bottom: 0;
+	}
+	
+	&__avatar
+	{
+		margin: 60px 0 0 90px;
+		width: 250px;
+		font: $weight-semibold 14px/14px $fontNeris;
+		color: $color-black;
+		letter-spacing: 0.15em;
+		text-transform: uppercase;
+		text-align: center;
+		position: absolute;
+		
+		@media only screen and (max-width: $tabWidth) 
+		{
+			margin-left: 0;
+		}
+		
+		&_hide
+		{
+			display: none;
+		}
+		
+		.description
+		{
+			margin-top: 10px;
+			letter-spacing: 0;
+			font-size: 16px;
+			font-weight: $weight-light;
+			color: $color-gray;
+			text-transform: none;
+		}
+	}
+	.avatarContainer
+	{
+		border-radius: 207px;
+		width: 207px;
+		height: 207px;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		margin: 0 auto 20px auto;
+		overflow: hidden;
+		position: relative;
+		z-index: 3;
+		
+		&_preview
+		{
+			width: 45px;
+			height: 45px;
+			border-radius: 45px;
+			transition: opacity $transitionDuration ease;
+		}
+	}
+	.avatarContainerIcons
+	{		
+		position: absolute;
+		width: 200px;
+		height: 200px;
+		margin-left: 25px;	
+		
+		&:before
+		{
+			content: url('/images/comment.png');
+			width: 83px;
+			height: 80px;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			margin: 0 0 -30px -25px;
+			z-index: 1;
+		}
+		&:after
+		{
+			content: url('/images/finger.png');
+			width: 84px;
+			height: 70px;
+			position: absolute;
+			right: 0;
+			top: 0;
+			margin: -30px -25px 0 0;
+			z-index: 1;
+		}
+	}
+	.otherReviews
+	{
+		width: 250px;
+		margin: 350px 0 0 90px;
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		
+		@media only screen and (max-width: $tabWidth) 
+		{
+			margin-left: 0;
+		}
+		
+		.avatarContainer
+		{
+			opacity: 0.5;
+		}
+		a
+		{
+			&:hover,
+			&.active
+			{
+				.avatarContainer
+				{
+					opacity: 1;
+				}
+			}
+		}
+	}
+	&__info
+	{
+		font: $weight-light 22px/32px $fontNeris;
+		color: $color-gray;
+		margin: 110px 0 0 110px;
+		position: absolute;
+		padding-right: 90px;
+		
+		@media only screen and (max-width: $tabWidth) 
+		{
+			position: static;
+			margin: 40px 0 40px 60px;
+			padding-right: 40px;
+		}
+		
+		&_hide
+		{
+			display: none;
+		}
+		
+		h2
+		{
+			font-size: 42px;
+			font-weight: $weight-black;
+			line-height: 52px;
+			color: $color-black;
+			margin: 0 0 40px 0;
+			position: relative;
+			z-index: 5;
+			
+			@media only screen and (max-width: $tabWidth) 
+			{
+				font-size: 36px;
+				line-height: 42px
+			}
+			@media only screen and (max-width: $mobileWidth) 
+			{
+				font-size: 24px;
+				line-height: 36px;
+			}
+		}
+		.infoIcons
+		{
+			position: absolute;
+			&:before
+			{
+				content: url('/images/quote.png');
+				position: absolute;
+				left: 0;
+				top: 0;
+				margin: -15px 0 0 -40px;
+				width: 70px;
+				height: 52px;
+				z-index: 1;
+			}
+		}
+	}
+}
+
+.support
+{
+	min-height: 290px;
+	background: $color-darkBlue;	
+	
+	&__topline
+	{
+		height: 20px;
+		background: $color-lightGray;
+		
+		@media only screen and (max-width: $tabWidth) 
+		{
+			display: none;
+		}
+	}
+}
+.supportContainer
+{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;	
+	min-height: 270px;	
+	
+	@media only screen and (max-width: $tabWidth) 
+	{
+		flex-wrap: wrap;
+		flex-direction: column;
+		padding: 40px 0;
+	}
+	
+	&__image
+	{
+		border-right: 1px $color-white-30 solid;
+		padding: 0 40px 0 120px;
+		
+		@media only screen and (max-width: $tabWidth) 
+		{
+			border: 0;
+			padding: 0;
+			margin-bottom: 20px;
+		}
+	}
+	&__description
+	{
+		font: $weight-semibold 26px/32px $fontNeris;
+		color: $color-white;
+		padding: 0 60px;
+	}
+}
+
+.sites
+{
+	background: $color-white;
+	padding: 80px 0;
+	
+	@media only screen and (max-width: $tabWidth) 
+	{
+		padding: 40px 0;
+	}
+	
+	&__header
+	{
+		font: $weight-semibold 36px/42px $fontNeris;
+		color: $color-black;
+		text-align: center;
+		
+		a
+		{
+			border-bottom: 1px $color-black-20 solid;
+		}
+	}
+}
+.siteBlocks
+{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	font: $weight-semibold 26px/32px $fontNeris;
+	padding: 0 90px;
+	
+	@media only screen and (max-width: $tabWidth) 
+	{
+		flex-direction: column;
+		align-items: center;
+		padding: 0;
+	}
+	
+	&__item
+	{
+		width: 100%;
+		max-width: 310px;
+		height: 380px;
+		margin-top: 50px;
+		position: relative;		
+		
+		.description
+		{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: 0;			
+			display: flex;
+			align-items: flex-end;
+			flex-wrap: wrap;
+			
+			b, a
+			{
+				font-weight: $weight-semibold;
+				font-size: 16px;
+			}
+			a
+			{
+				color: $color-darkBlue;
+				border-bottom: 1px $color-darkBlue-20 solid;
+			}
+		}
+		
+		&_banner
+		{
+			color: $color-white;
+			height: auto;
+			
+			.description
+			{
+				padding: 35px 30px;	
+			}
+			img
+			{
+				@media only screen and (max-width: $tabWidth) 
+				{
+					display: block;
+					max-width: 100%;
+					height: auto;
+				}
+			}
+		}
+		
+		.screen
+		{
+			position: relative;
+			z-index: 1;
+			
+			@media only screen and (max-width: $tabWidth) 
+			{
+				display: block;
+				max-width: 100%;
+				height: auto;
+			}
+		}
+	}
+}
+
+.hr
+{
+	height: 1px;
+	background: $color-lightGray3;
+	
+	&_limit
+	{
+		margin: 0 90px;
+	}
+}
+
+.news
+{
+	padding: 15px 0 70px;
+	background: $color-white;
+	
+	.sites__header
+	{
+		margin-bottom: 0;
+	}
+}
+.newsContainer
+{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding: 0 90px;
+	
+	@media only screen and (max-width: $tabWidth) 
+	{
+		flex-direction: column;
+		align-items: center;
+		padding: 0;
+	}
+	
+	&__item
+	{
+		width: 340px;
+		margin-top: 60px;
+		
+		.itemContent
+		{
+			display: flex;
+			justify-content: flex-start;
+			flex-wrap: wrap;
+			font: $weight-light 18px/22px $fontNeris;
+			color: $color-black;
+			
+			.content
+			{
+				width: 240px;
+				padding-left: 20px;
+			}
+			.roundFoto
+			{
+				width: 80px;
+				height: 80px;
+				border-radius: 80px;
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position: center;
+			}
+			
+			b
+			{
+				font-size: 12px;
+				font-weight: $weight-light;
+				color: $color-lightGray4;
+				display: block;
+				letter-spacing: 0.15em;
+				text-transform: uppercase;
+			}
+		}
+	}
+}
+
+.variants
+{
+	min-height: 399px;
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	font: $weight-light 18px/22px $fontNeris;
+	color: $color-lightGray3;
+	
+	@media only screen and (max-width: $tabWidth) 
+	{
+		flex-direction: column;		
+	}
+	
+	.buyNetcat,
+	.chooseDeveloper
+	{
+		width: 50%;
+		padding: 50px 90px 0;
+		background-repeat: no-repeat;
+		
+		@media only screen and (max-width: $tabWidth) 
+		{
+			width: 100%;
+			padding: 40px;
+			background-size: cover;
+		}
+	}
+	.buyNetcat
+	{
+		background-image: url('/images/variantsleft.jpg');
+		
+	}
+	.chooseDeveloper
+	{
+		background-image: url('/images/variantsright.jpg');
+	}
+	
+	&__header
+	{
+		margin-top: 30px;
+		font-size: 28px;
+		line-height: 32px;
+		font-weight: $weight-black;
+		color: $color-white;
+	}
+	&__description
+	{
+		margin: 10px 0 40px;
+	}
+}
+
+.footer
+{
+	background: $color-darkBlue3;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding: 40px 90px;
+	
+	@media only screen and (max-width: $tabWidth) 
+	{
+		flex-direction: column;
+		align-items: flex-start;
+		padding: 20px 0;
+	}
+	
+	&__line
+	{
+		font: $weight-semibold 14px/28px $fontNeris;
+		color: $color-white-80;
+		
+		@media only screen and (max-width: $tabWidth) 
+		{
+			display: none;
+		}
+		
+		&_big,
+		&_nc
+		{
+			@media only screen and (max-width: $tabWidth) 
+			{
+				display: block;
+				width: 100%;
+				text-align: center;
+			}
+		}
+		
+		h2
+		{
+			margin: 0 0 10px;
+			font-size: 12px;
+			font-weight: $weight-semibold;
+			color: $color-lightBlue3;
+			letter-spacing: 0.15em;
+			
+			&.less
+			{
+				line-height: 18px;
+			}
+		}
+		a
+		{
+			display: block;
+		}
+		
+		&_big
+		{
+			font-size: 16px;
+			color: $color-white;
+		}
+		
+		.social
+		{
+			margin: 20px 0;
+			
+			a
+			{
+				display: inline-block;
+				margin-right: 3px;
+			}
+		}
+		
+		.download
+		{
+			color: $color-darkBlue;
+			font-size: 14px;
+		}		
+	}
+	&__cols
+	{
+		display: flex;
+		justify-content: flex-start;
+		flex-wrap: wrap;
+		
+		@media only screen and (max-width: $tabWidth) 
+		{
+			flex-direction: column;
+		}
+		
+		.col
+		{
+			margin-right: 20px;
+			
+			@media only screen and (max-width: $tabWidth) 
+			{
+				margin-right: 0;
+			}
+		}
+	}
+}
