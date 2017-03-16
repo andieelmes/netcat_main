@@ -1,31 +1,27 @@
-;(function () {
-	var $animationElement = $('.js-animationElement'),
-		$window = $(window);
+;
+(function() {
+    var $animationElement = $('.js-animationElement'),
+        $window = $(window);
 
-	function inView() 
-	{
-		var windowHeight = $window.height(),
-			windowWidth = $window.height(),
-			windowTop = $window.scrollTop(),
-			windowBottom = (windowTop + windowHeight);
+    function inView() {
+        var windowHeight = $window.height(),
+            delta = windowHeight * 3 / 4,
+            windowWidth = $window.height(),
+            windowTop = $window.scrollTop(),
+            windowBottom = (windowTop + delta);
 
-		$.each($animationElement, function() {
-			var $element = $(this),
-				elementHeight = $element.outerHeight(),
-				elementTop = $element.offset().top,
-				elementBottom = (elementTop + elementHeight);
+        $.each($animationElement, function() {
+            var $element = $(this),
+                elementHeight = $element.outerHeight(),
+                elementTop = $element.offset().top,
+                elementBottom = (elementTop + elementHeight);
 
-			if (elementBottom >= windowTop && elementTop <= windowBottom)
-			{
-				$element.addClass('inView');
-			} 
-			/* else 
-			{
-				$element.removeClass('inView');
-			} */
-		});
-	}
+            if (elementBottom >= windowTop && elementTop <= windowBottom) {
+                $element.addClass('inView');
+            }
+        });
+    }
 
-	$window.on('scroll resize', inView);
-	$window.trigger('scroll');
+    $window.on('scroll resize', inView);
+    $window.trigger('scroll');
 })();
