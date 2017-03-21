@@ -6,11 +6,14 @@
     function inView() {
         var windowHeight = $window.height(),
             delta = windowHeight * 3 / 4,
-            windowWidth = $window.height(),
+            windowWidth = $window.width(),
             windowTop = $window.scrollTop(),
             windowBottom = (windowTop + delta);
+        if (windowWidth <= 960) {
+            $animationElement.addClass('inView')
+        }
 
-        $.each($animationElement, function() {
+        $animationElement.each(function() {
             var $element = $(this),
                 elementHeight = $element.outerHeight(),
                 elementTop = $element.offset().top,
